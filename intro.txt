@@ -1,12 +1,8 @@
-# TUES 11 TP
-
 Михаил Здравков
 
-## EMAILs
-* mzdravkov@elsys-bg.org
-* mihail0zdravkov@gmail.com
+mzdravkov@elsys-bg.org
+mihail0zdravkov@gmail.com
 
-```
 ,-.----.                                                        
 \    /  \              ___      ,---,                           
 |   :    \           ,--.'|_  ,--.' |                           
@@ -22,4 +18,3 @@
 `---'.|      :  \  \  ---`-'  `--''                '---'        
   `---`       \  ' ;                                            
                `--`                                             
-```
