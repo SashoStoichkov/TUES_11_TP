@@ -3,6 +3,12 @@ from solution import *
 
 class TestAccumulateLeft(unittest.TestCase):
     # tuple tests left
+    def test_if_tuple_of_one_element_is_the_collection_given_and_addition_is_the_operation_then_return_correct_result(self):
+        self.assertEqual(accumulate_left(lambda a, b: a + b, 64, (2,)), 66.0)
+
+    def test_if_tuple_of_one_hundred_elements_is_the_collection_given_and_addition_is_the_operation_then_return_correct_result(self):
+        self.assertEqual(accumulate_left(lambda a, b: a + b, 64, tuple(range(1, 501))), 125314.0)
+
     def test_if_tuple_is_the_collection_given_and_addition_is_the_operation_then_return_correct_result(self):
         self.assertEqual(accumulate_left(lambda a, b: a + b, 64, (2, 4, 8)), 78.0)
 
@@ -16,6 +22,12 @@ class TestAccumulateLeft(unittest.TestCase):
         self.assertEqual(accumulate_left(lambda a, b: a / b, 64, (2, 4, 8)), 1.0)
 
     # list tests left
+    def test_if_list_of_one_element_is_the_collection_given_and_addition_is_the_operation_then_return_correct_result(self):
+        self.assertEqual(accumulate_left(lambda a, b: a + b, 64, [2]), 66.0)
+
+    def test_if_list_of_one_hundred_elements_is_the_collection_given_and_addition_is_the_operation_then_return_correct_result(self):
+        self.assertEqual(accumulate_left(lambda a, b: a + b, 64, list(range(1, 501))), 125314.0)
+
     def test_if_list_is_the_collection_given_and_addition_is_the_operation_then_return_correct_result(self):
         self.assertEqual(accumulate_left(lambda a, b: a + b, 64, [2, 4, 8]), 78.0)
 
@@ -30,6 +42,12 @@ class TestAccumulateLeft(unittest.TestCase):
 
 class TestAccumulateRight(unittest.TestCase):
     # tuple tests right
+    def test_if_tuple_of_one_element_is_the_collection_given_and_addition_is_the_operation_then_return_correct_result(self):
+        self.assertEqual(accumulate_right(lambda a, b: a + b, 8, (2,)), 10.0)
+
+    def test_if_tuple_of_five_hundred_elements_is_the_collection_given_and_addition_is_the_operation_then_return_correct_result(self):
+        self.assertEqual(accumulate_right(lambda a, b: a + b, 8, tuple(range(1, 501))), 125258.0)
+
     def test_if_tuple_is_the_collection_given_and_addition_is_the_operation_then_return_correct_result(self):
         self.assertEqual(accumulate_right(lambda a, b: a + b, 8, (16, 32, 64)), 120.0)
 
@@ -43,6 +61,12 @@ class TestAccumulateRight(unittest.TestCase):
         self.assertEqual(accumulate_right(lambda a, b: a / b, 8, (16, 32, 64)), 4.0)
 
     # list tests right
+    def test_if_list_of_one_element_is_the_collection_given_and_addition_is_the_operation_then_return_correct_result(self):
+        self.assertEqual(accumulate_right(lambda a, b: a + b, 8, [2]), 10.0)
+
+    def test_if_list_of_five_hundred_elements_is_the_collection_given_and_addition_is_the_operation_then_return_correct_result(self):
+        self.assertEqual(accumulate_right(lambda a, b: a + b, 8, list(range(1, 501))), 125258.0)
+
     def test_if_list_is_the_collection_given_and_addition_is_the_operation_then_return_correct_result(self):
         self.assertEqual(accumulate_right(lambda a, b: a + b, 8, [16, 32, 64]), 120.0)
 
