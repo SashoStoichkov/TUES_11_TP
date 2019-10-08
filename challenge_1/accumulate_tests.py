@@ -1,6 +1,5 @@
 import unittest
-from accumulate_left import accumulate_left
-from accumulate_right import accumulate_right
+from solution import *
 
 class TestAccumulateLeft(unittest.TestCase):
     # tuple tests left
