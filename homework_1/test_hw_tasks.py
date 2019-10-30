@@ -27,19 +27,19 @@ class TestHasSameIngredients(unittest.TestCase):
         medicine1 = ("medicine1", [("p", 5), ("q", 3)])
         medicine2 = ("medicine2", [("p", 4), ("q", 3)])
 
-        self.assertEqual(has_same_ingredients(medicine1, medicine2), True)
+        self.assertTrue(has_same_ingredients(medicine1, medicine2))
 
     def test_function_when_result_must_be_true_with_swapped_names(self):
         medicine1 = ("medicine1", [("q", 5), ("p", 3)])
         medicine2 = ("medicine2", [("p", 4), ("q", 3)])
 
-        self.assertEqual(has_same_ingredients(medicine1, medicine2), True)
+        self.assertTrue(has_same_ingredients(medicine1, medicine2))
 
     def test_function_when_result_must_be_false(self):
         medicine1 = ("medicine1", [("p", 5)])
         medicine2 = ("medicine2", [("p", 4), ("q", 3)])
 
-        self.assertEqual(has_same_ingredients(medicine1, medicine2), False)
+        self.assertFalse(has_same_ingredients(medicine1, medicine2))
 
 
 class TestIsStronger(unittest.TestCase):
@@ -47,19 +47,19 @@ class TestIsStronger(unittest.TestCase):
         medicine1 = ("medicine1", [("p", 5), ("q", 3)])
         medicine2 = ("medicine2", [("p", 4), ("q", 4)])
 
-        self.assertEqual(isStronger(medicine1, medicine2), "Equal")
+        self.assertFalse(isStronger(medicine1, medicine2))
 
     def test_function_when_result_must_be_true(self):
         medicine1 = ("medicine1", [("p", 5), ("q", 3)])
         medicine2 = ("medicine2", [("p", 4), ("q", 3)])
 
-        self.assertEqual(isStronger(medicine1, medicine2), True)
+        self.assertTrue(isStronger(medicine1, medicine2))
 
     def test_function_when_result_must_be_false(self):
         medicine1 = ("medicine1", [("p", 5), ("q", 3)])
         medicine2 = ("medicine2", [("p", 4), ("q", 3)])
 
-        self.assertEqual(isStronger(medicine2, medicine1), False)
+        self.assertFalse(isStronger(medicine2, medicine1))
 
 
 class TestLeastStronger(unittest.TestCase):

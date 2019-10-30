@@ -21,8 +21,6 @@ def isStronger(medicine1, medicine2):
 
         if sum_of_divs > 0:
             return True
-        elif sum_of_divs == 0:
-            return "Equal"
         else:
             return False
 
