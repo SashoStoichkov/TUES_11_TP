@@ -95,5 +95,39 @@ class TestStrongRelation(unittest.TestCase):
         self.assertEqual(strongRelation([medicine1, medicine2, medicine3]), expected_result)
 
 
+class TestMaxNotes(unittest.TestCase):
+    def test_function_when_result_must_be_true(self):
+        true_result = maxNotes([[1, 2, 3], [2, 2, 2], [9, 7, 3]])
+        expected_result = 19
+
+        self.assertEqual(true_result, expected_result)
+
+    def test_function_when_result_must_be_zero(self):
+        true_result = maxNotes([])
+        expected_result = 0
+
+        self.assertEqual(true_result, expected_result)
+
+    def test_function_when_result_must_be_equal(self):
+        true_result = maxNotes([[1, 2, 3], [2, 2, 2]])
+        expected_result = 6
+
+        self.assertEqual(true_result, expected_result)
+
+
+class TestLeading(unittest.TestCase):
+    def test_function_when_result_must_be_true(self):
+        true_result = leading([[1, 10, 2], [2, 2, 2], [9, 7, 3]])
+        expected_result = 2
+
+        self.assertEqual(true_result, expected_result)
+
+    def test_function_when_result_must_be_first_true(self):
+        true_result = leading([[1, 2, 3], [2, 2, 2], [9, 7, 3]])
+        expected_result = 0
+
+        self.assertEqual(true_result, expected_result)
+
+
 if __name__ == "__main__":
     unittest.main()
