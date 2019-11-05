@@ -1,3 +1,18 @@
+def group_by_f(func, lst):
+    result = dict()
+
+    for el in lst:
+        result_key = func(el)
+
+        if result_key not in result.keys():
+            result[result_key] = list()
+            result[result_key].append(el)
+        else:
+            result[result_key].append(el)
+
+    return result
+
+
 def has_same_ingredients(medicine1, medicine2):
 
     medicine1[1].sort()
@@ -68,16 +83,34 @@ def strongRelation(list_of_medicines):
     return result
 
 
+def maxNotes(list_of_parties):
+    max_sum = 0
+
+    for party in list_of_parties:
+        if sum(party) > max_sum:
+            max_sum = sum(party)
+
+    return max_sum
+
+
+def leading(list_of_parties):
+    parties = dict()
+
+    index = len(list_of_parties) - 1
+
+    for i in range(len(list_of_parties)):
+        parties[i] = list_of_parties[i][index]
+
+    max_note = 0
+
+    for k, v in parties.items():
+        if v > max_note:
+            max_note = v
+
+    for k, v in parties.items():
+        if v == max_note:
+            return k
+
+
 if __name__ == "__main__":
-    A = ("A", [("p", 5), ("q", 3)])
-    B = ("B", [("p", 4), ("q", 3)])
-    C = ("C", [("p", 3)])
-    D = ("D", [("p", 4.5), ("q", 3), ("r", 1)])
-
-    print(has_same_ingredients(A, D))
-    print(isStronger(A, D))
-
-    # print(leastStronger(B, [A, C, D]))
-
-    list_of_medicines = [A, B, C, D]
-    print(strongRelation(list_of_medicines))
+    pass
