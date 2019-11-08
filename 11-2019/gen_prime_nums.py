@@ -2,9 +2,9 @@ from math import sqrt
 
 
 def is_prime(n):
-    if (n <= 1) or (n % 2 == 0):
+    if n <= 1 or n % 2 == 0:
         return False
-    if (n == 2):
+    if n == 2:
         return True
 
     i = 3
@@ -24,11 +24,3 @@ def generate_prime_numbers():
 
         if is_prime(number):
             yield number
-
-
-gen = generate_prime_numbers()
-
-for i in gen:
-    if i > 100:
-        break
-    print(i)
