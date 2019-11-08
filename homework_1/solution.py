@@ -27,7 +27,7 @@ def has_same_ingredients(medicine1, medicine2):
         return False
 
 
-def isStronger(medicine1, medicine2):
+def is_stronger(medicine1, medicine2):
     sum_of_divs = 0
 
     if has_same_ingredients(medicine2, medicine1):
@@ -43,14 +43,14 @@ def isStronger(medicine1, medicine2):
         return False
 
 
-def leastStronger(medicine, lst_of_meds):
+def least_stronger(medicine, lst_of_meds):
     sums = dict()
 
     for ind in range(len(lst_of_meds)):
         sum_of_divs = 0
         med = lst_of_meds[ind]
 
-        if has_same_ingredients(medicine, med) and isStronger(med, medicine):
+        if has_same_ingredients(medicine, med) and is_stronger(med, medicine):
             for i in range(len(medicine[1])):
                 sum_of_divs += med[1][i][1] - medicine[1][i][1]
 
@@ -68,14 +68,14 @@ def leastStronger(medicine, lst_of_meds):
         return lst_of_meds[k]
 
 
-def strongRelation(list_of_medicines):
+def strong_relation(list_of_medicines):
     result = list()
 
     for medicine in list_of_medicines:
         stronger_medicines = list()
 
         for med in list_of_medicines:
-            if isStronger(med, medicine) is True:
+            if is_stronger(med, medicine) is True:
                 stronger_medicines.append(med[0])
 
         result.append((medicine, stronger_medicines))
@@ -83,7 +83,7 @@ def strongRelation(list_of_medicines):
     return result
 
 
-def maxNotes(list_of_parties):
+def max_notes(list_of_parties):
     max_sum = 0
 
     for party in list_of_parties:

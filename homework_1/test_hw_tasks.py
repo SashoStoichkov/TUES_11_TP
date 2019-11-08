@@ -1,9 +1,9 @@
-from task1 import group_by_f
+from solution import group_by_f
 
-from task2 import has_same_ingredients
-from task2 import isStronger, leastStronger, strongRelation
+from solution import has_same_ingredients
+from solution import is_stronger, least_stronger, strong_relation
 
-from task3 import maxNotes, leading
+from solution import max_notes, leading
 
 import unittest
 
@@ -46,19 +46,19 @@ class TestIsStronger(unittest.TestCase):
         medicine1 = ("medicine1", [("p", 5), ("q", 3)])
         medicine2 = ("medicine2", [("p", 4), ("q", 4)])
 
-        self.assertFalse(isStronger(medicine1, medicine2))
+        self.assertFalse(is_stronger(medicine1, medicine2))
 
     def test_function_when_first_medicine_is_stronger_than_the_second(self):
         medicine1 = ("medicine1", [("p", 5), ("q", 3)])
         medicine2 = ("medicine2", [("p", 4), ("q", 3)])
 
-        self.assertTrue(isStronger(medicine1, medicine2))
+        self.assertTrue(is_stronger(medicine1, medicine2))
 
     def test_function_when_first_medicine_is_not_stronger_than_the_second(self):
         medicine1 = ("medicine1", [("p", 5), ("q", 3)])
         medicine2 = ("medicine2", [("p", 4), ("q", 3)])
 
-        self.assertFalse(isStronger(medicine2, medicine1))
+        self.assertFalse(is_stronger(medicine2, medicine1))
 
 
 class TestLeastStronger(unittest.TestCase):
@@ -70,7 +70,7 @@ class TestLeastStronger(unittest.TestCase):
 
         expected_result = ("medicine4", [("p", 4.5), ("q", 3), ("r", 1)])
 
-        self.assertEqual(leastStronger(medicine2, [medicine1, medicine3, medicine4]), expected_result)
+        self.assertEqual(least_stronger(medicine2, [medicine1, medicine3, medicine4]), expected_result)
 
     def test_function_when_no_medicine_is_stronger_than_return_empty_list(self):
         medicine1 = ("medicine1", [("p", 5), ("q", 3)])
@@ -80,7 +80,7 @@ class TestLeastStronger(unittest.TestCase):
 
         expected_result = []
 
-        self.assertEqual(leastStronger(medicine1, [medicine2, medicine3, medicine4]), expected_result)
+        self.assertEqual(least_stronger(medicine1, [medicine2, medicine3, medicine4]), expected_result)
 
 
 class TestStrongRelation(unittest.TestCase):
@@ -91,24 +91,24 @@ class TestStrongRelation(unittest.TestCase):
 
         expected_result = [(('medicine1', [('p', 5), ('q', 3)]), []), (('medicine2', [('p', 4), ('q', 3)]), ['medicine1']), (('medicine3', [('p', 3)]), ['medicine1', 'medicine2'])]
 
-        self.assertEqual(strongRelation([medicine1, medicine2, medicine3]), expected_result)
+        self.assertEqual(strong_relation([medicine1, medicine2, medicine3]), expected_result)
 
 
 class TestMaxNotes(unittest.TestCase):
     def test_function_when_result_must_be_the_max_notes(self):
-        true_result = maxNotes([[1, 2, 3], [2, 2, 2], [9, 7, 3]])
+        true_result = max_notes([[1, 2, 3], [2, 2, 2], [9, 7, 3]])
         expected_result = 19
 
         self.assertEqual(true_result, expected_result)
 
     def test_function_when_result_must_be_zero(self):
-        true_result = maxNotes([])
+        true_result = max_notes([])
         expected_result = 0
 
         self.assertEqual(true_result, expected_result)
 
     def test_function_when_max_notes_are_equal_then_return_result(self):
-        true_result = maxNotes([[1, 2, 3], [2, 2, 2]])
+        true_result = max_notes([[1, 2, 3], [2, 2, 2]])
         expected_result = 6
 
         self.assertEqual(true_result, expected_result)
