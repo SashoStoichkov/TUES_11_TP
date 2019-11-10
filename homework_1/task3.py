@@ -9,22 +9,37 @@ def maxNotes(list_of_parties):
 
 
 def leading(list_of_parties):
-    parties = dict()
-
-    index = len(list_of_parties) - 1
+    result_list = list()
 
     for i in range(len(list_of_parties)):
-        parties[i] = list_of_parties[i][index]
+        result_list.append([0]*len(list_of_parties[i]))
 
-    max_note = 0
+    parties = dict()
 
-    for k, v in parties.items():
-        if v > max_note:
-            max_note = v
+    for ind in range(len(list_of_parties)):
+        for i in range(len(list_of_parties)):
+            parties[i] = list_of_parties[i][ind]
 
-    for k, v in parties.items():
-        if v == max_note:
-            return k
+        max_note = 0
+
+        for k, v in parties.items():
+            if v > max_note:
+                max_note = v
+
+        for k, v in parties.items():
+            if v == max_note:
+                result_list[k][ind] = 1
+
+    result_sum_list = list()
+
+    for lst in result_list:
+        result_sum_list.append(sum(lst))
+
+    max_sum = max(result_sum_list)
+
+    for i in range(len(result_sum_list)):
+        if result_sum_list[i] == max_sum:
+            return i
 
 
 if __name__ == "__main__":

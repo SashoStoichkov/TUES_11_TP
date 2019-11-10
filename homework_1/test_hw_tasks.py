@@ -123,7 +123,7 @@ class TestLeading(unittest.TestCase):
 
     def test_function_when_result_must_be_the_first_leading_note(self):
         true_result = leading([[1, 2, 3], [2, 2, 2], [9, 7, 3]])
-        expected_result = 0
+        expected_result = 2
 
         self.assertEqual(true_result, expected_result)
 
