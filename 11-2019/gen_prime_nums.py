@@ -16,11 +16,8 @@ def is_prime(n):
     return True
 
 
-def generate_prime_numbers():
-    number = 1
+def generate_prime_numbers(num_of_prime_numbers):
 
-    while True:
-        number += 1
-
+    for number in range(1, num_of_prime_numbers+1):
         if is_prime(number):
             yield number
