@@ -1,0 +1,9 @@
+<title>Categories</title>
+
+<a href="/category/new">New category</a>
+
+<h1>Categories</h1>
+{% for category in categories %}
+<b>Name:</b> {{ category.name }}
+<br/>
+{% endfor %}
