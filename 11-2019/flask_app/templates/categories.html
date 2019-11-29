@@ -1,9 +1,14 @@
 <title>Categories</title>
 
-<a href="/category/new">New category</a>
+<a href="/categories/new">New category</a> <br/>
+<a href="/posts/new">New post</a> <br/>
+<a href="/register">Register</a>
+
 
 <h1>Categories</h1>
+<a href="/categories/0">No category</a><br/>
 {% for category in categories %}
-<b>Name:</b> {{ category.name }}
+<a href="/categories/{{ category.id }}">{{ category.name }}</a>
 <br/>
 {% endfor %}
+
